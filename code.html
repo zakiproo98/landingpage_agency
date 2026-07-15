@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEON_STUDIO - Beyond The Frame</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#d1e4ff",
+                        "surface-container-highest": "#333535",
+                        "surface-container-lowest": "#0c0f0f",
+                        "error": "#ffb4ab",
+                        "tertiary": "#9fcaff",
+                        "surface-tint": "#ffb599",
+                        "on-secondary-container": "#ffa17b",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#ffdbce",
+                        "on-secondary-fixed": "#370e00",
+                        "secondary-fixed-dim": "#ffb599",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-dim": "#121414",
+                        "on-background": "#e2e2e2",
+                        "background": "#121414",
+                        "inverse-primary": "#a63b00",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-variant": "#333535",
+                        "surface-container-low": "#1a1c1c",
+                        "on-secondary": "#5a1c00",
+                        "outline-variant": "#5b4137",
+                        "on-surface-variant": "#e4bfb1",
+                        "on-tertiary-fixed": "#001d36",
+                        "on-primary-container": "#531900",
+                        "on-tertiary-container": "#002d51",
+                        "secondary": "#ffb599",
+                        "outline": "#ab897d",
+                        "on-primary-fixed": "#370e00",
+                        "surface-bright": "#37393a",
+                        "tertiary-fixed-dim": "#9fcaff",
+                        "surface": "#121414",
+                        "surface-container-high": "#282a2b",
+                        "tertiary-container": "#0097fb",
+                        "on-secondary-fixed-variant": "#7d2d04",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#ffb599",
+                        "primary-container": "#ff5e00",
+                        "surface-container": "#1e2020",
+                        "primary": "#ffb599",
+                        "on-tertiary-fixed-variant": "#00497d",
+                        "on-tertiary": "#003258",
+                        "on-surface": "#e2e2e2",
+                        "primary-fixed": "#ffdbce",
+                        "secondary-container": "#802f07",
+                        "on-primary": "#5a1c00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px",
+                        "transition-timing": "cubic-bezier(0.4, 0, 0.2, 1)",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter", "sans-serif"],
+                        "display-hero-mobile": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "metadata-caps": ["Inter", "sans-serif"],
+                        "display-hero": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display-hero-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.05em", "fontWeight": "800"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "metadata-caps": ["11px", {"lineHeight": "1.4", "letterSpacing": "0.4em", "fontWeight": "600"}],
+                        "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.05em", "fontWeight": "800"}]
+                    },
+                    "keyframes": {
+                        "float": {
+                            "0%, 100%": { transform: "translateY(0)" },
+                            "50%": { transform: "translateY(-10px)" }
+                        }
+                    },
+                    "animation": {
+                        "float": "float 3s ease-in-out infinite"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-button {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-button:hover {
+            background-color: rgba(255, 94, 0, 0.2);
+            border-color: rgba(255, 94, 0, 0.4);
+            box-shadow: 0 0 32px rgba(255, 94, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-on-surface font-body-lg antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 w-[90%] md:w-full bg-white/5 dark:bg-white/5 rounded-full mt-6 mx-auto max-w-[1400px] backdrop-blur-md border border-white/10 shadow-[0_0_32px_rgba(255,94,0,0.1)]">
+<div class="font-display-hero text-body-lg font-extrabold tracking-tighter text-on-surface">NEON_STUDIO</div>
+<ul class="hidden md:flex items-center gap-8 font-metadata-caps text-metadata-caps">
+<li><a class="text-primary font-bold hover:text-primary transition-colors" href="#">Work</a></li>
+<li><a class="text-on-surface/70 hover:text-on-surface transition-colors" href="#">Studio</a></li>
+<li><a class="text-on-surface/70 hover:text-on-surface transition-colors" href="#">Lab</a></li>
+<li><a class="text-on-surface/70 hover:text-on-surface transition-colors" href="#">Contact</a></li>
+</ul>
+<button class="font-metadata-caps text-metadata-caps px-6 py-2 glass-button rounded-full text-on-surface">
+            START A PROJECT
+        </button>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-screen flex flex-col justify-end px-margin-mobile md:px-margin-desktop pb-20">
+<!-- Video Background -->
+<video autoplay="" class="absolute inset-0 w-full h-full object-cover z-0" loop="" muted="" playsinline="">
+<source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_131941_d136af49-e243-493a-be14-6ff3f24e09e6.mp4" type="video/mp4"/>
+</video>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 z-10" style="background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.5));"></div>
+<!-- Content -->
+<div class="relative z-20 max-w-container-max mx-auto w-full mb-20">
+<p class="font-metadata-caps text-metadata-caps text-on-surface/70 uppercase mb-4 tracking-[0.4em] text-[10px]">CREATIVE AGENCY</p>
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero mb-6 max-w-4xl text-on-surface leading-none tracking-[-0.05em]">BEYOND THE FRAME.</h1>
+<p class="font-body-lg text-body-lg text-on-surface/60 max-w-[450px] mb-10">
+                We craft high-end visual experiences for brands that demand to be seen differently. Cinematic motion meets digital precision.
+            </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 rounded-full glass-button font-metadata-caps text-metadata-caps flex items-center gap-2">
+                    VIEW SHOWREEL
+                    <span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+<button class="px-8 py-4 rounded-full glass-button font-metadata-caps text-metadata-caps">
+                    OUR EXPERTISE
+                </button>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="relative z-20 max-w-container-max mx-auto w-full flex justify-between items-end border-t border-white/10 pt-6">
+<div class="font-metadata-caps text-metadata-caps text-on-surface/40 uppercase text-[11px]">
+                LOCATION: TOKYO / STUDIO
+            </div>
+<div class="flex items-center gap-8">
+<div class="font-metadata-caps text-metadata-caps text-on-surface/40 uppercase text-[11px]">
+                    © 2024 / NEON STUDIO
+                </div>
+<button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-on-surface hover:bg-white/10 transition-colors animate-float">
+<span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Services Section -->
+<section class="bg-[#0a0a0a] py-32 px-margin-mobile md:px-margin-desktop relative z-20">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32">
+<!-- Column 1 -->
+<div>
+<div class="w-12 h-1 bg-primary-container mb-8"></div>
+<h2 class="font-display-hero text-display-hero-mobile md:text-[64px] font-extrabold tracking-[-0.04em] leading-[1.1] text-on-surface">OUR<br/>EXPERTISE.</h2>
+</div>
+<!-- Column 2 -->
+<div class="flex flex-col justify-center">
+<div class="flex flex-wrap gap-4 mb-8 font-metadata-caps text-metadata-caps text-on-surface/40 uppercase">
+<span class="px-4 py-2 border border-white/10 rounded-full">01 / BRANDING</span>
+<span class="px-4 py-2 border border-white/10 rounded-full">02 / DIGITAL</span>
+<span class="px-4 py-2 border border-white/10 rounded-full">03 / MOTION</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface/60 max-w-lg leading-[1.6]">
+                    We exist at the intersection of cinematic artistry and functional digital design. By treating every interface as a lens and every interaction as a scene, we build brand ecosystems that don't just communicate—they perform. Our studio operates as a unified entity, blurring the lines between production house and digital agency.
+                </p>
+<div class="mt-12">
+<a class="inline-flex items-center gap-2 font-metadata-caps text-metadata-caps text-primary hover:text-primary-fixed transition-colors group" href="#">
+                        EXPLORE SERVICES
+                        <span class="material-symbols-outlined text-[16px] transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</body></html>
